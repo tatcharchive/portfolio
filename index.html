@@ -1,60 +1,345 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>https://tatcharchive.github.io./</title>
-    <style>
-      html, body {
-        height: 100%;
-      }
-      body {
-        background-color: #fff;
-        background: radial-gradient(circle at center, #fff 0%, #f8f8f8 75%, #ebebeb 100%);
-        color: #222;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-        font-size: 1rem;
-        line-height: 1.5;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      main {
-        padding: 1rem;
-        text-align: center;
-      }
-      h1 {
-        font-size: 2.5rem;
-        line-height: 1.1;
-        margin: 0;
-      }
-      @media screen and (max-width: 480px) {
-        h1 {
-          font-size: 1.5rem;
-        }
-      }
-      h1::after {
-        content: "";
-        background-color: #ffe800;
-        background: repeating-linear-gradient(45deg, #50a9bf, #de768c 0.5rem, #222 0.5rem, #222 1.0rem);
-        display: block;
-        height: 0.5rem;
-        margin-top: 1rem;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-      p {
-        margin: 1rem 0 0 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>https://tatcharchive.github.io.</h1>
-      <p>Our website is under construction.</p>
-    </main>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tatcha Commission – Digital art commissions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#FFFFFF;--ink:#111111;--mute:#585856;--card:#F6F6F4;--line:#CFCFCB;--acc:#B8963E;--accink:#111111;--soft:#DEDEDA}
+:root[data-theme="dark"]{--bg:#0E0E0E;--ink:#EDEDEA;--mute:#A3A39E;--card:#181818;--line:#2F2F2D;--acc:#D4AF37;--accink:#0E0E0E;--soft:#222221}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "Jost",system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.1;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font:700 1.15rem "Jost",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav button{background:none;border:0;color:var(--mute);font:500 1rem "Jost",sans-serif;padding:8px 14px;border-radius:0;cursor:pointer}
+nav button[aria-current="page"]{background:var(--soft);color:var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.btn{display:inline-block;background:var(--acc);color:var(--accink);border:0;border-radius:0;padding:13px 28px;letter-spacing:.04em;font:700 1rem "Jost",sans-serif;cursor:pointer;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+section{padding:48px 0}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);font-weight:500;max-width:12ch;letter-spacing:-.01em}
+.hero p{font-size:1.15rem;color:var(--mute);max-width:46ch;margin:18px 0 26px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 26px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.art{border-radius:2px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.art svg,.art img{display:block;width:100%;height:auto}.art img{aspect-ratio:4/3;object-fit:cover}
+.art p{margin:0;padding:10px 14px;font-weight:500}
+.card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:2px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:1.35rem}.card p{margin:0;color:var(--mute)}
+#types,#novelTypes{grid-template-columns:minmax(0,1fr)}
+#types .card,#novelTypes .card{--px:32px;--py:30px;padding:var(--py) var(--px)}
+.meta{font-weight:700;color:var(--ink)!important;margin-top:auto!important;padding-top:8px}
+.social{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.social a{color:var(--ink);text-decoration:none;font-weight:500;padding:8px 16px;border-radius:0;box-shadow:inset 0 0 0 2px var(--line)}
+.social a:hover{background:var(--soft)}
+.est{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+@media(max-width:820px){.est{grid-template-columns:1fr}}
+fieldset{border:0;padding:0;margin:0 0 28px}
+legend{font:600 1.5rem "Cormorant Garamond",Georgia,serif;margin-bottom:12px;padding:0}
+.opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:2px;padding:12px 16px;margin-bottom:10px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.opt input[type=radio],.opt input[type=checkbox]{accent-color:var(--acc);width:20px;height:20px}
+.opt .t{flex:1}.opt .t small{display:block;color:var(--mute)}
+.opt .p{font-weight:700;white-space:nowrap}
+.qty{width:64px;padding:6px 8px;border-radius:2px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.sum{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);background:var(--card);border:1px solid var(--line);border-radius:2px;padding:22px}
+.sum h3{font-size:1.3rem;margin-bottom:12px}
+.sum ul{list-style:none;padding:0;margin:0 0 14px}
+.sum li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.total{display:flex;justify-content:space-between;align-items:baseline;font:600 2.2rem "Cormorant Garamond",Georgia,serif;margin-bottom:6px}
+.note{color:var(--mute);font-size:.9rem;margin:0 0 16px}
+.empty{color:var(--mute)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.95rem}th,td{text-align:left;padding:9px 14px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:600;color:var(--mute)}.card .foot{font-size:.92rem}.card .btn{align-self:flex-start;margin-top:6px}
+.sel{width:100%;padding:14px 16px;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:2px}.sel:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.spot{margin:0 0 6px!important;border:0;border-radius:0;background:none}.spot svg,.spot img{width:100%;height:clamp(220px,38vw,420px);aspect-ratio:auto;object-fit:cover}.spot p{padding:16px 18px}.spot p span{display:block;color:var(--mute);font-weight:400}
+#featured{gap:6px}#featured .art{border:0;border-radius:0;background:none}#featured .art svg,#featured .art img{aspect-ratio:4/3;height:auto}
+.strip{--gh:clamp(190px,30vw,270px);display:flex;gap:6px;overflow-x:auto;margin:calc(var(--py,30px)*-1) calc(var(--px,32px)*-1) 12px;scroll-snap-type:x proximity;scrollbar-width:thin}
+#novelTypes .strip{--gh:clamp(260px,42vw,400px)}
+.it{flex:0 0 auto;padding:0;border:0;background:none;cursor:zoom-in;scroll-snap-align:start}
+.it img,.it svg{display:block;height:var(--gh);width:auto}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.95);display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 56px) 56px calc(env(safe-area-inset-bottom,0px) + 24px)}
+#lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;color:#EDEDEA;max-width:100%}
+#lbm img{display:block;max-width:100%;max-height:72vh}
+#lbm svg{display:block;height:min(72vh,640px);width:auto;max-width:100%}
+#lbc{font-size:1.05rem}
+#lb button{position:absolute;background:rgba(0,0,0,.45);color:#EDEDEA;border:0;width:44px;height:44px;font-size:1.8rem;line-height:1;cursor:pointer}
+#lb .lbx{top:calc(env(safe-area-inset-top,0px) + 8px);right:8px}
+#lb .lbp{left:8px;top:50%;transform:translateY(-50%)}
+#lb .lbq{right:8px;top:50%;transform:translateY(-50%)}
+.clist{max-width:640px;border-top:1px solid var(--line)}.clist a{display:flex;justify-content:space-between;gap:16px;padding:16px 4px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:500}.clist a span+span{color:var(--mute);font-weight:400}.clist a:hover{background:var(--soft)}.ch{font-size:1.5rem;margin:36px 0 10px}.tips{padding-left:1.2rem;color:var(--mute);max-width:60ch;margin:0}.tips li{margin-bottom:6px}
+html{-webkit-text-size-adjust:100%}
+@media(max-width:820px){.sum{position:static}}
+@media(max-width:560px){
+#types .card,#novelTypes .card{--px:18px;--py:20px}
+#lb{padding-left:12px;padding-right:12px}
+.tw thead{display:none}
+.tw table,.tw tbody,.tw tr{display:block}
+.tw tr{padding:10px 0;border-bottom:1px solid var(--line)}
+.tw td{display:flex;justify-content:space-between;gap:14px;border:0;padding:3px 0;text-align:right}
+.tw td::before{content:attr(data-label);color:var(--mute);text-align:left;flex:0 0 auto}
+.tw td:first-child{font-weight:600;text-align:left}
+.tw td:first-child::before{display:none}
+}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--mute);font-size:.95rem}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:no-preference){.view{animation:in .25s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">Tatcha Commission</div>
+  <nav aria-label="Main">
+    <button data-go="home">Home</button><button data-go="menu">Menu</button><button data-go="novel">Novel cover</button><button data-go="estimate">Estimate</button><button data-go="contact">Contact</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+<!-- HOME -->
+<div class="view" id="home">
+  <section class="hero">
+    <h1>Digital art, drawn to order.</h1>
+    <p>Characters, portraits and scenes made from your ideas. Browse the work, pick a style, and see a price before you reach out.</p>
+    <div class="row"><button class="btn" data-go="menu">See the commission menu</button><button class="btn alt" data-go="estimate">Get a price estimate</button></div>
+  </section>
+  <section style="padding-top:8px">
+    <h2>Featured artworks</h2>
+    <p class="sub">A few recent pieces. Replace these placeholders with your own images.</p>
+    <div id="spotlight"></div>
+    <div class="grid" id="featured"></div>
+  </section>
+  <section>
+    <h2>Find me online</h2>
+    <p class="sub">New work and commission slots are announced here.</p>
+    <div class="social" id="social"></div>
+  </section>
+</div>
+
+<!-- MENU -->
+<div class="view" id="menu" hidden>
+  <section>
+    <h2>Commission menu</h2>
+    <p class="sub">Choose the type of piece you want. Prices are starting points; add-ons are in the estimator.</p>
+    <div class="grid" id="types"></div>
+  </section>
+</div>
+
+<!-- NOVEL COVER -->
+<div class="view" id="novel" hidden>
+  <section>
+    <h2>Novel cover</h2>
+    <p class="sub">Covers for e-books and print. Choose your options in the estimator to see a price.</p>
+    <div class="grid" id="novelTypes"></div>
+  </section>
+</div>
+
+<!-- ESTIMATE -->
+<div class="view" id="estimate" hidden>
+  <section>
+    <h2>Price estimate</h2>
+    <p class="sub">Pick a commission type and any add-ons. The total updates as you choose.</p>
+    <div class="est">
+      <div>
+        <fieldset><legend>Commission type</legend><div id="typeOpts"></div></fieldset>
+        <fieldset><legend>Size and style</legend><div id="optOpts"></div></fieldset>
+        <fieldset id="addFs"><legend>Add-ons</legend><div id="addOpts"></div></fieldset>
+        <fieldset id="useFs"><legend>Usage</legend><div id="useOpts"></div></fieldset>
+      </div>
+      <aside class="sum" aria-live="polite">
+        <h3>Your estimate</h3>
+        <div id="lines"></div>
+        <div class="total"><span id="tl">Total</span><span id="total"></span></div>
+        <p class="note">This is an estimate. The final price is confirmed after we talk through your idea.</p>
+        <a class="btn" id="send" href="#">Request this commission</a>
+      </aside>
+    </div>
+  </section>
+</div>
+<!-- CONTACT -->
+<div class="view" id="contact" hidden>
+  <section>
+    <h2>Contact</h2>
+    <p class="sub" id="cIntro"></p>
+    <div class="clist" id="cList"></div>
+    <h3 class="ch">Before you write</h3>
+    <ul class="tips" id="cTips"></ul>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Tatcha Commission. Commission slots and pricing may change.</div></footer>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lbx" data-lb="close" aria-label="Close">×</button>
+  <button class="lbp lbn" data-lb="prev" aria-label="Previous image">‹</button>
+  <figure><div id="lbm"></div><figcaption id="lbc"></figcaption></figure>
+  <button class="lbq lbn" data-lb="next" aria-label="Next image">›</button>
+</div>
+
+<script>
+/* ===== EDIT THIS BLOCK: your details, menu and prices ===== */
+const SK=[["Bust up",600,1000],["Half body",800,1500],["Knee up",1200,1800],["Full body",1500,2000]];
+const CFG={
+  email:"hello@example.com",
+  cur:"฿",
+  contact:{
+    intro:"Have an idea? Send me a message with your references and I will get back to you.",
+    tips:["Which commission type from the menu you would like","Reference images or details of your character","Whether the piece is for personal or commercial use","Your deadline, if you have one"]
+  },
+  socials:[{name:"Instagram",url:"#"},{name:"X",url:"#"},{name:"Bluesky",url:"#"},{name:"ArtStation",url:"#"}],
+  /* The wide card shown above the featured grid. Set img to e.g. "images/spotlight.jpg". */
+  spotlight:{t:"Moonlit courier",img:""},
+  /* Put image files in the images folder, then set img to e.g. "images/piece1.jpg". Empty img shows a placeholder. */
+  featured:[
+    {t:"Moonlit courier",img:""},{t:"Fox spirit",img:""},{t:"Rooftop garden",img:""},
+    {t:"Knight at rest",img:""},{t:"Tea shop cat",img:""},{t:"Storm witch",img:""}
+  ],
+  /* opts = price choices. adds = add-ons (p = price, q = quantity, k = price read from the chosen option).
+     gallery = pictures in a strip on top of the card, e.g. ["images/a.jpg",{src:"images/b.jpg",cap:"Full body · Colored"}]. Clicking enlarges a picture and shows its cap. Placeholders show if empty. m = commercial-use multiplier. from = prices are starting prices. Numbers in rows show as prices. */
+  types:[
+    {id:"sketch",name:"Sketch",desc:"Line sketch, either shaded or fully colored.",
+     head:["Size","Shaded","Colored"],rows:SK,foot:"Commercial use: ×1.5 for shaded, ×2 for colored.",
+     opts:SK.flatMap(([n,a,b])=>[{n:n+" · Shaded",p:a,m:1.5},{n:n+" · Colored",p:b,m:2}]),adds:[]},
+    {id:"color",name:"Full color",desc:"Pick clean line art with a crisp 2D look, or painting with brush strokes and texture.",m:2,
+     head:["Size","Full color"],rows:[["Headshot",1500],["Half body",2300],["Knee up",2800],["Full body",3500]],
+     foot:"Background starts at ฿500. Commercial use: ×2.",
+     opts:[{n:"Headshot",p:1500},{n:"Half body",p:2300},{n:"Knee up",p:2800},{n:"Full body",p:3500}],
+     adds:[{id:"bg",n:"Background",note:"Starting price; depends on difficulty",p:500}]},
+    {id:"sheet",name:"Character sheet",desc:"A presentation sheet for your character, from a simple standard to a fully custom layout.",m:2,
+     head:["Type","Price","Includes"],
+     rows:[["Standard",1200,"Knee-up illustration, a bust-up doodle or prop, character details. Very rough color."],
+           ["Extra",1600,"Knee-up illustration, decorated sheet layout, sketch color with more detail."],
+           ["Custom","Varies","Name box, character scale, extra doodles and decorations, color of your choice."]],
+     foot:"Extra face expressions are +฿150 each. Commercial use: ×2. Custom sheets are quoted individually.",
+     opts:[{n:"Standard",p:1200},{n:"Extra",p:1600}],
+     adds:[{id:"face",n:"Face expression",note:"Each additional face",p:150,q:true}]},
+    {id:"ebook",page:"novel",name:"E-book cover",desc:"Front cover only. PSD (RGB) and PNG, A4 at 350–400 DPI. CMYK on request.",from:true,
+     head:["Characters","Standard (from)","Extra (from)"],
+     rows:[["1 character",7500,9000],["2 characters",9000,10000],["Separate background",1000,1500],["Turnaround","Up to 1 month","1–1.5 months"]],
+     foot:"Extra goes up to ฿10,000 for 1 character and ฿12,000 for 2 characters. Prices updated 2026.",
+     opts:[{n:"1 character · Standard",p:7500,t:"Up to 1 month",bg:1000},{n:"1 character · Extra",p:9000,t:"1–1.5 months",bg:1500},
+           {n:"2 characters · Standard",p:9000,t:"Up to 1 month",bg:1000},{n:"2 characters · Extra",p:10000,t:"1–1.5 months",bg:1500}],
+     adds:[{id:"bg",n:"Separate background",note:"Starting price; depends on difficulty",k:"bg"}]},
+    {id:"print",page:"novel",name:"Print cover",desc:"Front and back cover, sized for the printer with 3 mm bleed. PSD (CMYK) and PNG at 400–500 DPI.",from:true,
+     head:["Characters","Standard (from)","Extra (from)"],
+     rows:[["1 character",10000,13000],["2 characters",18000,20000],["Separate background","500–1,000","500–1,500"],["Turnaround","Up to 1.5 months","1.5–2 months"]],
+     foot:"Prices updated 2026.",
+     opts:[{n:"1 character · Standard",p:10000,t:"Up to 1.5 months",bg:500},{n:"1 character · Extra",p:13000,t:"1.5–2 months",bg:500},
+           {n:"2 characters · Standard",p:18000,t:"Up to 1.5 months",bg:500},{n:"2 characters · Extra",p:20000,t:"1.5–2 months",bg:500}],
+     adds:[{id:"bg",n:"Separate background",note:"Starting price; depends on difficulty",k:"bg"}]}
+  ]
+};
+/* ========================================================= */
+const $=s=>document.querySelector(s), money=n=>CFG.cur+n.toLocaleString();
+const state={cat:CFG.types[0].id,opt:0,add:{},comm:false};
+const cat=()=>CFG.types.find(x=>x.id===state.cat);
+const cell=c=>typeof c==="number"?money(c):c;
+const table=t=>`<div class="tw"><table><thead><tr>${t.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${t.rows.map(r=>`<tr>${r.map((c,ci)=>`<td data-label="${t.head[ci]}">${cell(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+
+function art(i){
+  const g=[["#1A1A1A","#B8963E","#D9D9D6"],["#D9D9D6","#1A1A1A","#C9A74B"],["#2C2C2B","#D4AF37","#8E8E8A"]][i%3];
+  return `<svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder artwork"><rect width="300" height="220" fill="${g[0]}"/><circle cx="${90+i*24}" cy="95" r="${40+(i%2)*12}" fill="${g[1]}"/><rect x="${130-i*6}" y="60" width="110" height="130" fill="${g[2]}" transform="rotate(${-8+i*5} 190 125)"/><line x1="20" y1="195" x2="280" y2="195" stroke="${g[1]}" stroke-width="2"/></svg>`;
+}
+$("#featured").innerHTML=CFG.featured.map((f,i)=>`<figure class="art" style="margin:0">${f.img?`<img src="${f.img}" alt="${f.t}" loading="lazy">`:art(i)}</figure>`).join("");
+const sp=CFG.spotlight;
+$("#spotlight").innerHTML=`<figure class="art spot">${sp.img?`<img src="${sp.img}" alt="${sp.t}">`:art(2)}</figure>`;
+$("#social").innerHTML=CFG.socials.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join("");
+const LB={}, RAT=[[1,1],[3,4],[4,3],[2,3],[1,1]];
+function ph(i,w,h){
+  const g=[["#1A1A1A","#B8963E","#D9D9D6"],["#D9D9D6","#1A1A1A","#C9A74B"],["#2C2C2B","#D4AF37","#8E8E8A"]][i%3], W=w*100, H=h*100, r=Math.min(W,H);
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" style="aspect-ratio:${w}/${h}" role="img" aria-label="Placeholder artwork"><rect width="${W}" height="${H}" fill="${g[0]}"/><circle cx="${W*.36}" cy="${H*.4}" r="${r*.2}" fill="${g[1]}"/><rect x="${W*.5}" y="${H*.22}" width="${W*.34}" height="${H*.52}" fill="${g[2]}" transform="rotate(${-6+i*4} ${W*.67} ${H*.48})"/><line x1="${W*.08}" y1="${H*.9}" x2="${W*.92}" y2="${H*.9}" stroke="${g[1]}" stroke-width="2"/></svg>`;
+}
+const media=x=>x.src?`<img src="${x.src}" alt="${x.cap}" loading="lazy">`:ph(...x.ph);
+const gal=t=>{
+  const k=CFG.types.indexOf(t);
+  const items=t.gallery&&t.gallery.length?t.gallery.map(g=>typeof g==="string"?{src:g,cap:t.name}:{src:g.src,cap:g.cap||t.name}):RAT.map((r,j)=>({ph:[k+j,...r],cap:`${t.name} · example ${j+1}`}));
+  LB[t.id]=items;
+  return `<div class="strip" tabindex="0" role="region" aria-label="${t.name} examples">${items.map((x,j)=>`<button class="it" data-open="${t.id}:${j}" aria-label="Enlarge: ${x.cap}">${media(x)}</button>`).join("")}</div>`;
+};
+const card=t=>`<div class="card">${gal(t)}<h3>${t.name}</h3><p>${t.desc}</p>${table(t)}<p class="foot">${t.foot}</p>${t.page==="novel"?"":`<button class="btn alt" data-pick="${t.id}">Estimate this</button>`}</div>`;
+$("#types").innerHTML=CFG.types.filter(t=>!t.page).map(card).join("");
+$("#novelTypes").innerHTML=CFG.types.filter(t=>t.page==="novel").map(card).join("");
+$("#cIntro").textContent=CFG.contact.intro;
+$("#cList").innerHTML=[{name:"Email",url:"mailto:"+CFG.email,text:CFG.email},...CFG.socials.map(c=>({name:c.name,url:c.url,text:"Message me"}))].map(c=>`<a href="${c.url}" ${c.url.startsWith("mailto")?"":'target="_blank" rel="noopener"'}><span>${c.name}</span><span>${c.text}</span></a>`).join("");
+$("#cTips").innerHTML=CFG.contact.tips.map(t=>`<li>${t}</li>`).join("");
+$("#yr").textContent=new Date().getFullYear();
+
+function renderOpts(){
+  const t=cat(), o=t.opts[state.opt], m=o.m||t.m;
+  $("#typeOpts").innerHTML=CFG.types.map(x=>`<label class="opt"><input type="radio" name="type" value="${x.id}" ${x.id===t.id?"checked":""}><span class="t">${x.name}<small>${x.desc}</small></span></label>`).join("");
+  $("#optOpts").innerHTML=`<select class="sel" name="opt" aria-label="Size and style">${t.opts.map((x,i)=>`<option value="${i}" ${i===state.opt?"selected":""}>${x.n}${x.t?" ("+x.t+")":""} – ${t.from?"from ":""}${money(x.p)}</option>`).join("")}</select>`;
+  $("#addFs").hidden=!t.adds.length;
+  $("#addOpts").innerHTML=t.adds.map(a=>{
+    const u=a.k?o[a.k]:a.p;
+    const ctl=a.q?`<input class="qty" type="number" min="0" max="10" value="${state.add[a.id]||0}" data-q="${a.id}" aria-label="${a.n} quantity">`:`<input type="checkbox" value="${a.id}" ${state.add[a.id]?"checked":""}>`;
+    return `<label class="opt">${a.q?"":ctl}<span class="t">${a.n}<small>${a.note||""}</small></span>${a.q?ctl:""}<span class="p">+${money(u)}</span></label>`;
+  }).join("");
+  $("#useFs").hidden=!m;
+  if(m) $("#useOpts").innerHTML=`<label class="opt"><input type="radio" name="use" value="p" ${state.comm?"":"checked"}><span class="t">Personal use<small>Not sold or used to make a profit, such as gifts or role-play.</small></span></label><label class="opt"><input type="radio" name="use" value="c" ${state.comm?"checked":""}><span class="t">Commercial use<small>Used to earn income, to advertise, or on merchandise.</small></span><span class="p">×${m}</span></label>`;
+  calc();
+}
+function calc(){
+  const t=cat(), o=t.opts[state.opt], m=o.m||t.m;
+  let sub=o.p; const L=[[t.name+" · "+o.n,o.p]];
+  t.adds.forEach(a=>{const q=state.add[a.id]||0; if(!q) return; const u=a.k?o[a.k]:a.p; sub+=u*q; L.push([a.n+(q>1?" × "+q:""),u*q])});
+  let total=sub;
+  if(state.comm&&m){total=Math.round(sub*m); L.push(["Commercial use ×"+m,total-sub])}
+  $("#lines").innerHTML=`<ul>${L.map(l=>`<li><span>${l[0]}</span><span>${money(l[1])}</span></li>`).join("")}</ul>`;
+  const label=t.from?"Starting at":"Total";
+  $("#tl").textContent=label; $("#total").textContent=money(total);
+  const body=`Hi! I'd like to request a commission.\n\n${L.map(l=>l[0]+": "+money(l[1])).join("\n")}\n${label}: ${money(total)}\n\nMy idea:\n`;
+  $("#send").href=`mailto:${CFG.email}?subject=${encodeURIComponent("Commission request")}&body=${encodeURIComponent(body)}`;
+}
+document.addEventListener("change",e=>{
+  const n=e.target.name;
+  if(n==="type"){state.cat=e.target.value;state.opt=0;state.add={};state.comm=false;renderOpts()}
+  else if(n==="opt"){state.opt=+e.target.value;renderOpts()}
+  else if(n==="use"){state.comm=e.target.value==="c";calc()}
+  else if(e.target.matches('#addOpts input[type=checkbox]')){state.add[e.target.value]=e.target.checked?1:0;calc()}
+});
+document.addEventListener("input",e=>{if(e.target.matches(".qty")){state.add[e.target.dataset.q]=Math.max(0,Math.min(10,+e.target.value||0));calc()}});
+
+function show(v){
+  if(!["home","menu","novel","estimate","contact"].includes(v)) v="home";
+  document.querySelectorAll(".view").forEach(el=>el.hidden=el.id!==v);
+  document.querySelectorAll("nav button").forEach(b=>{if(b.dataset.go===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+  window.scrollTo(0,0);
+}
+let cur=null;
+function lbShow(){
+  const list=LB[cur.id], x=list[cur.i];
+  $("#lbm").innerHTML=media(x); $("#lbc").textContent=x.cap;
+  document.querySelectorAll("#lb .lbn").forEach(b=>b.hidden=list.length<2);
+  $("#lb").hidden=false; $("#lb .lbx").focus();
+}
+function lbMove(d){const n=LB[cur.id].length;cur.i=(cur.i+d+n)%n;lbShow()}
+function lbClose(){const el=cur&&cur.el;$("#lb").hidden=true;cur=null;if(el)el.focus()}
+document.addEventListener("keydown",e=>{
+  if(!cur) return;
+  if(e.key==="Escape") lbClose();
+  else if(e.key==="ArrowRight") lbMove(1);
+  else if(e.key==="ArrowLeft") lbMove(-1);
+});
+document.addEventListener("click",e=>{
+  const op=e.target.closest("[data-open]");
+  if(op){const [id,i]=op.dataset.open.split(":");cur={id,i:+i,el:op};lbShow();return}
+  const lb=e.target.closest("[data-lb]");
+  if(lb){const a=lb.dataset.lb;if(a==="close")lbClose();else lbMove(a==="next"?1:-1);return}
+  if(e.target.id==="lb"){lbClose();return}
+  const g=e.target.closest("[data-go]"), p=e.target.closest("[data-pick]");
+  if(p){state.cat=p.dataset.pick;state.opt=0;state.add={};state.comm=false;renderOpts();show("estimate")}
+  else if(g){show(g.dataset.go)}
+});
+renderOpts();show("home");
+</script>
+</body>
 </html>
